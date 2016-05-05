@@ -1,6 +1,7 @@
 require 'json'
 require 'sinatra'
 require 'cgi'
+require 'sanitize'
 
 require './head-to-head-stats.rb'
 
@@ -32,8 +33,8 @@ class StatsApp < Sinatra::Base
 		begin
 			players = params[:splat][0]
 			players = players.split ','
-			targetPlayer = players[0]
-			otherPlayers = players[1..-1].map{|x| x.strip}
+			targetPlayer = Sanitize.clean(players[0])
+			otherPlayers = players[1..-1].map{|x| Sanitize.clean(x.strip)}
 			playerNames = [targetPlayer] + otherPlayers
 			playerNames = playerNames.map{|x| x.downcase}
 			playerResults = results.select {|player| playerNames.include? player['playerName'].downcase}
