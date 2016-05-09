@@ -89,6 +89,12 @@ module Stats
 				end
 
 				statsStr +=  "#{targetPlayer} has won #{stats[:totalWinPercent]}% of sets against #{name}, however in their last 5 sets, #{targetPlayer} has won #{stats[:last5WinPercent]}% of sets\n"
+				if name.downcase == "scarpian" 
+					statsStr += "Scarpian is the nicest and fairest player, with 3207 elo in that category!\n"
+					statsStr += "Scarpian has placed 1st in the 'Biggest Homie' event at SGT 27 times running!\n"
+					statsStr += "<a href='\hat'>Scarpian's hat</a> has won the most money matches on record, with 297 wins!\n"
+					statsStr += "\nSorry for being a dingus scarp :|\n"
+				end
 				statsStr +=  "\n==========================================================================================\n\n"
 			end
 

@@ -46,6 +46,10 @@ class StatsApp < Sinatra::Base
 		end
 	end
 	
+	get '/hat' do
+		erb :hat
+	end
+	
 	post '/players=*' do
 		redirect to('/')
 	end

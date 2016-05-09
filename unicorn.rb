@@ -5,7 +5,7 @@
 worker_processes 2
 working_directory @dir
 
-timeout 10
+timeout 30
 
 # Specify path to socket unicorn listens to,
 # we will use this in our nginx.conf later
